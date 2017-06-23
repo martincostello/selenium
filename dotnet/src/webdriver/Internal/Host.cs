@@ -83,16 +83,13 @@ namespace WebDriver.Internal
                 case PlatformID.Win32Windows:
                 case PlatformID.WinCE:
                     return OperatingSystemFamily.Windows;
-                    break;
 
                 case PlatformID.Unix:
                 case (PlatformID)PlatformMonoUnixValue:
                     return OperatingSystemFamily.Linux;
-                    break;
 
                 case PlatformID.MacOSX:
                     return OperatingSystemFamily.OSX;
-                    break;
 
                 case PlatformID.Xbox:
                 default:

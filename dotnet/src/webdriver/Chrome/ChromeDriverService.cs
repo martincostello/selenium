@@ -197,7 +197,6 @@ namespace OpenQA.Selenium.Chrome
             // straightforward as you might hope.
             // See: http://mono.wikia.com/wiki/Detecting_the_execution_platform
             // and https://msdn.microsoft.com/en-us/library/3a8hyw88(v=vs.110).aspx
-            const int PlatformMonoUnixValue = 128;
 
             switch (Host.GetOperatingSystemFamily())
             {

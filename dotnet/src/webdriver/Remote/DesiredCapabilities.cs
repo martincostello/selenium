@@ -248,8 +248,10 @@ namespace OpenQA.Selenium.Remote
         public static DesiredCapabilities HtmlUnitWithJavaScript()
         {
             DesiredCapabilities dc = new DesiredCapabilities("htmlunit", string.Empty, new Platform(PlatformType.Any));
+#pragma warning disable 0618
             dc.IsJavaScriptEnabled = true;
-            return dc;
+#pragma warning restore 0618
+              return dc;
         }
 
         /// <summary>
@@ -278,7 +280,9 @@ namespace OpenQA.Selenium.Remote
         {
             // This is strangely inconsistent.
             DesiredCapabilities dc = new DesiredCapabilities("chrome", string.Empty, new Platform(PlatformType.Any));
+#pragma warning disable 0618
             dc.IsJavaScriptEnabled = true;
+#pragma warning restore 0618
             return dc;
         }
 
@@ -383,7 +387,9 @@ namespace OpenQA.Selenium.Remote
             result = this.BrowserName != null ? this.BrowserName.GetHashCode() : 0;
             result = (31 * result) + (this.Version != null ? this.Version.GetHashCode() : 0);
             result = (31 * result) + (this.Platform != null ? this.Platform.GetHashCode() : 0);
+#pragma warning disable 0618
             result = (31 * result) + (this.IsJavaScriptEnabled ? 1 : 0);
+#pragma warning restore 0618
             return result;
         }
 
@@ -393,7 +399,9 @@ namespace OpenQA.Selenium.Remote
         /// <returns>String of capabilities being used</returns>
         public override string ToString()
         {
+#pragma warning disable 0618
             return string.Format(CultureInfo.InvariantCulture, "Capabilities [BrowserName={0}, IsJavaScriptEnabled={1}, Platform={2}, Version={3}]", this.BrowserName, this.IsJavaScriptEnabled, this.Platform.PlatformType.ToString(), this.Version);
+#pragma warning restore 0618
         }
 
         /// <summary>
@@ -414,7 +422,9 @@ namespace OpenQA.Selenium.Remote
                 return false;
             }
 
+#pragma warning disable 0618
             if (this.IsJavaScriptEnabled != other.IsJavaScriptEnabled)
+#pragma warning restore 0618
             {
                 return false;
             }

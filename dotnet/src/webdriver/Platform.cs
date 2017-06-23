@@ -86,14 +86,15 @@ namespace OpenQA.Selenium
     {
         private static Platform current;
         private PlatformType platformTypeValue;
-        private int major;
-        private int minor;
+        private int major = 0;
+        private int minor = 0;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Platform"/> class for a specific platform type.
         /// </summary>
         /// <param name="typeValue">The platform type.</param>
         public Platform(PlatformType typeValue)
+          : this()
         {
             this.platformTypeValue = typeValue;
         }

@@ -99,7 +99,9 @@ namespace OpenQA.Selenium
         /// to save the image to.</param>
         public void SaveAsFile(string fileName, ScreenshotImageFormat format)
         {
+#pragma warning disable 0618
             this.SaveAsFile(fileName, ConvertScreenshotImageFormat(format));
+#pragma warning restore 0618
         }
 
         /// <summary>
