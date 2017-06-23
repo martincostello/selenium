@@ -15,7 +15,7 @@ build_script:
   - ps: dotnet pack dotnet\WebDriver.NET.Core.sln
 
 artifacts:
-  - path: *.nupkg
+  - path: /.*\.nupkg/
 
 nuget:
   disable_publish_on_pr: true
