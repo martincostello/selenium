@@ -1,26 +1,24 @@
-shallow_clone: true
-build: off
-environment:
-  matrix:
-    - RUBY_VERSION: 22-x64
-      TASK: build
-    - RUBY_VERSION: 200-x64
-      TASK: //rb:ie-test
-install:
-  - 'set JAVA_HOME=C:\Program Files (x86)\Java\jdk1.8.0'
-  - 'set PATH=%JAVA_HOME%;%PATH%'
-  - 'set RUBY_HOME=C:\Ruby22-x64\bin'
-  - 'set PATH=%RUBY_HOME%;%PATH%'
-  - 'set BUCK_EXTRA_JAVA_ARGS=-Djna.nosys=true'
-before_test:
-  - copy cpp\prebuilt\Win32\Release\IEDriverServer.exe C:\Tools\WebDriver
-  - ruby -v
-  - gem -v
-  - bundle -v
-  - chromedriver.exe --version
-  - geckodriver.exe --version
-  - IEDriverServer.exe --version
-  - dir C:\Tools\WebDriver
+﻿os: Visual Studio 2017
+version: 1.0.{build}
 
-test_script:
-  - cmd: scripts/appveyor/script.bat
+environment:
+  CLI_VERSION: 1.0.4
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  NUGET_XMLDOC_MODE: skip
+
+branches:
+  only:
+    - features/dotnetcore
+
+build_script:
+  - ps: dotnet restore dotnet\WebDriver.NET.Core.sln
+  - ps: dotnet pack dotnet\WebDriver.NET.Core.sln
+
+artifacts:
+  - path: *.nupkg
+
+nuget:
+  disable_publish_on_pr: true
+
+skip_tags: false
+test: off
