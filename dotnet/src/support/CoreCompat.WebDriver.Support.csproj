@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard1.5</TargetFramework>
@@ -16,10 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WebDriver\CoreCompat.Selenium.WebDriver.csproj">
-      <Project>{83C13931-B27C-425C-AAF0-5F96EEA4F173}</Project>
-      <Name>WebDriver</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\webdriver\CoreCompat.Selenium.WebDriver.csproj" />
   </ItemGroup>
 
 </Project>
