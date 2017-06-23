@@ -1,4 +1,4 @@
-projectFilesBackup/
+﻿projectFilesBackup/
 *.iws
 .DS_Store
 .svn
@@ -15,6 +15,7 @@ test-output/
 *~
 common/build
 /build/
+bin
 cpp/iedriver/IEReturnTypes.h
 java/client/src/org/openqa/selenium/ie/IeReturnTypes.java
 javascript/deps.js
