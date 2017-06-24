@@ -26,17 +26,22 @@ namespace System.IO.Compression
     /// </summary>
     internal sealed class ZipStorer : IDisposable
     {
+        static ZipStorer()
+        {
+#if NETSTANDARD1_5
+            // See https://github.com/dotnet/corefx/issues/10054#issuecomment-254877319
+            // and https://github.com/dotnet/corefx/issues/11715.
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+#endif
+
+            defaultEncoding = Encoding.GetEncoding(437);
+        }
+
         // Static CRC32 Table
         private static uint[] crcTable = GenerateCrc32Table();
 
         // Default filename encoder
-        private static Encoding defaultEncoding =
-#if NETSTANDARD1_5
-        Encoding.ASCII // https://github.com/dotnet/corefx/issues/11715
-#else
-        Encoding.GetEncoding(437)
-#endif
-      ;
+        private static Encoding defaultEncoding;
 
         // List of files to store
         private List<ZipFileEntry> files = new List<ZipFileEntry>();
