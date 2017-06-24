@@ -171,6 +171,13 @@ namespace OpenQA.Selenium.Internal
                 Uri uri = new Uri(executingAssembly.CodeBase);
                 currentDirectory = Path.GetDirectoryName(uri.LocalPath);
             }
+#else
+            //// HACK Visual Studio design-time references live in the NuGet cache
+            //// and aren't local, so current directory based on this file is wrong
+            if (currentDirectory.Contains(".nuget") || Assembly.GetEntryAssembly().Location.Contains(".nuget"))
+            {
+                currentDirectory = Directory.GetCurrentDirectory();
+            }
 #endif
 
             return currentDirectory;
