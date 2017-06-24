@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.5</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <PackageVersion>3.4.0-je-beta001</PackageVersion>
+    <PackageVersion>3.4.0-je-beta00$(APPVEYOR_BUILD_NUMBER)</PackageVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard1.5'">

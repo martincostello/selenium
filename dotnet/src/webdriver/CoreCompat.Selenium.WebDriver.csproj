@@ -4,7 +4,7 @@
     <TargetFrameworks>netstandard1.5;net40;net45</TargetFrameworks>
     <DisableImplicitFrameworkDefines>true</DisableImplicitFrameworkDefines>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <PackageVersion>3.4.0-je-beta001</PackageVersion>
+    <PackageVersion>3.4.0-je-beta00$(APPVEYOR_BUILD_NUMBER)</PackageVersion>
     <Description>Selenium WebDriver browser automation</Description>
     <Summary>Selenium WebDriver browser automation</Summary>
     <PackageTags>Selenium WebDriver browser automation</PackageTags>
@@ -39,5 +39,15 @@
     <PackageReference Include="System.Net.Sockets" Version="4.3.0" />
     <PackageReference Include="System.Console" Version="4.3.0" />
     <PackageReference Include="System.IO.Compression" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="getAttribute.js" />
+    <EmbeddedResource Include="isDisplayed.js" />
+    <EmbeddedResource Include="Newtonsoft.Json.Dynamic.snk" />
+    <EmbeddedResource Include="WebDriver.FirefoxExt.zip" />
+    <EmbeddedResource Include="WebDriver.FirefoxNoFocus.x64.dll" />
+    <EmbeddedResource Include="WebDriver.FirefoxNoFocus.x86.dll" />
+    <EmbeddedResource Include="WebDriver.FirefoxPreferences" />
   </ItemGroup>
 </Project>

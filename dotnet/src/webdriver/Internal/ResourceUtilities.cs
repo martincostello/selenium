@@ -70,6 +70,8 @@ namespace OpenQA.Selenium.Internal
                 Assembly executingAssembly = Assembly.GetCallingAssembly();
 #else
                 Assembly executingAssembly = typeof(ResourceUtilities).GetTypeInfo().Assembly;
+                // HACK Make resources found after manually embedding
+                resourceId = $"CoreCompat.Selenium.WebDriver.{resourceId}";
 #endif
                 resourceStream = executingAssembly.GetManifestResourceStream(resourceId);
             }
