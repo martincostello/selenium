@@ -4,7 +4,7 @@
     <TargetFrameworks>netstandard1.5;net40;net45</TargetFrameworks>
     <DisableImplicitFrameworkDefines>true</DisableImplicitFrameworkDefines>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <PackageVersion>3.4.0-je-beta00$(APPVEYOR_BUILD_NUMBER)</PackageVersion>
+    <PackageVersion>3.4.0-je-beta0$(APPVEYOR_BUILD_NUMBER)</PackageVersion>
     <Description>Selenium WebDriver browser automation</Description>
     <Summary>Selenium WebDriver browser automation</Summary>
     <PackageTags>Selenium WebDriver browser automation</PackageTags>
