@@ -32,7 +32,7 @@ namespace System.IO.Compression
         // Default filename encoder
         private static Encoding defaultEncoding =
 #if NETSTANDARD1_5
-        Encoding.GetEncoding(1252) // https://github.com/dotnet/corefx/issues/11715
+        Encoding.ASCII // https://github.com/dotnet/corefx/issues/11715
 #else
         Encoding.GetEncoding(437)
 #endif
